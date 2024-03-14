@@ -201,6 +201,14 @@ static void smtk_keys_mapper_init(SmtkKeysMapper *mapper)
 	g_hash_table_insert(mapper->xkb_replace_names,
 			    g_strdup("XF86MonBrightnessUp"),
 			    g_strdup("BrightnessUp"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Up"),
+                g_strdup("↑"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Left"),
+                g_strdup("←"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Right"),
+                g_strdup("→"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Down"),
+                g_strdup("↓"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Num_Lock"),
 			    g_strdup("NumLock"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("asciitilde"),
@@ -248,7 +256,7 @@ static void smtk_keys_mapper_init(SmtkKeysMapper *mapper)
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("bar"),
 			    g_strdup("|"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Caps_Lock"),
-			    g_strdup("CapsLock"));
+			    g_strdup("Ctrl"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("semicolon"),
 			    g_strdup(";"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("colon"),
@@ -256,11 +264,17 @@ static void smtk_keys_mapper_init(SmtkKeysMapper *mapper)
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("apostrophe"),
 			    g_strdup("'"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("quotedbl"),
-			    g_strdup("\""));
+                g_strdup("\""));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Delete"),
+                g_strdup("Del"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("BackSpace"),
+                g_strdup("⌫"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Return"),
-			    g_strdup("Enter"));
+			    g_strdup("⏎"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Escape"),
-			    g_strdup("Escape"));
+			    g_strdup("Esc"));
+    g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Insert"),
+                g_strdup("Ins"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("comma"),
 			    g_strdup(","));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("less"),
@@ -274,17 +288,17 @@ static void smtk_keys_mapper_init(SmtkKeysMapper *mapper)
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("question"),
 			    g_strdup("?"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("space"),
-			    g_strdup("Space"));
+			    g_strdup("␣"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Print"),
-			    g_strdup("PrintScreen"));
+			    g_strdup("Print"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Sys_Req"),
 			    g_strdup("SysReq"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Scroll_Lock"),
 			    g_strdup("ScrollLock"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Prior"),
-			    g_strdup("PageUp"));
+			    g_strdup("PgUp"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("Next"),
-			    g_strdup("PageDown"));
+			    g_strdup("PgDn"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("BTN_LEFT"),
 			    g_strdup("MouseLeft"));
 	g_hash_table_insert(mapper->xkb_replace_names, g_strdup("BTN_RIGHT"),
@@ -463,3 +477,4 @@ void smtk_keys_mapper_set_variant(SmtkKeysMapper *mapper, const char *variant)
 
 	smtk_keys_mapper_refresh_keymap(mapper);
 }
+
